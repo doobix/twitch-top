@@ -1,6 +1,8 @@
-# Top Viewed Games on Twitch in the Past 24 Hours
+# Top Viewed Games on Twitch (in the Past 24 Hours)
 
 This is a graph made with D3.js showing the most popular games based on number of viewers on Twitch.
+
+![Screenshot](http://i.imgur.com/RqgIjMc.png)
 
 ## Live Demo
 
