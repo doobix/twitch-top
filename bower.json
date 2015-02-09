@@ -1,0 +1,22 @@
+{
+  "name": "twitch-top",
+  "version": "0.0.0",
+  "homepage": "https://github.com/seewes/twitch-top",
+  "authors": [
+    "seewes <doobix@gmail.com>"
+  ],
+  "description": "Top Games Being Watch on Twitch",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "c3": "~0.4.9",
+    "jquery": "~2.1.3"
+  }
+}
