@@ -27,37 +27,61 @@
   <div id="chart"></div>
 
   <script type="text/javascript">
-  $.get('http://seewes.com/twitch/api2.php', function(json) {
-    var chart = c3.generate({
+  var url = 'http://seewes.com/twitch/api2.php';
+  var chart;
+
+  // Create initial graph
+  $.get(url, function(json) {
+    chart = c3.generate({
       data: {
         x: 'date',
         xFormat: '%Y-%m-%d %H:%M:%S',
         json: json.top,
         keys: {
           x: 'date',
-          value: json.games
+          value: json.games,
         }
       },
       axis: {
         x: {
           type: 'timeseries',
           tick: {
-            format: '%H:%M:%S'
+            format: '%H:%M:%S',
           }
         },
         y: {
-          label: 'Viewers'
+          label: 'Viewers',
         }
       },
       point: {
-        show: false
+        show: false,
+      },
+      grid: {
+        x: {
+          show: true,
+        },
+        y: {
+          show: true,
+        }
       }
     });
   });
 
-  // setTimeout(function () {
-  //     chart.load();
-  // }, 1000);
+  // Load new graph data every minute
+  setInterval(function() {
+    $.get(url, function(json) {
+      console.log(json.top);
+      chart.load({
+        x: 'date',
+        xFormat: '%Y-%m-%d %H:%M:%S',
+        json: json.top,
+        keys: {
+          x: 'date',
+          value: json.games,
+        }
+      });
+    });
+  }, 60000);
   </script>
 </body>
 </html>
