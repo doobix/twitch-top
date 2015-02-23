@@ -8,11 +8,23 @@
     height: 100%;
   }
   body {
-    font: 10px sans-serif;
+    font: 12px sans-serif;
     height: 100%;
+    margin: 0;
   }
-  h1 {
-    color: rgb(100, 65, 165);
+  #header {
+    background-color: #f2f2f2;
+    padding: 15px;
+  }
+  #header h1 {
+    color: #6441a5;
+    margin: 0;
+  }
+  #header a {
+    color: #6441a5;
+  }
+  #header a:hover {
+    color: #7550ba;
   }
   #chart {
     height: 100%;
@@ -23,7 +35,10 @@
   <script type="text/javascript" src="lib/c3/c3.min.js"></script>
 </head>
 <body>
-  <h1>Top Games Being Watched on Twitch in the Past 24 Hours</h1>
+  <div id="header">
+    <h1>Top Games Being Watched on Twitch in the Past 24 Hours</h1>
+    Created by <a href="http://www.github.com/seewes/twitch-top">seewes</a>
+  </div>
   <div id="chart"></div>
 
   <script type="text/javascript">
