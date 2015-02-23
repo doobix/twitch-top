@@ -2,7 +2,7 @@
 
 This is a graph made with C3.js (a D3-based reusable chart library) showing the most popular games based on number of viewers on Twitch.
 
-![Screenshot](http://i.imgur.com/anqHMBQ.png)
+![Screenshot](http://i.imgur.com/6AB0lVN.png)
 
 ## Live Demo
 
