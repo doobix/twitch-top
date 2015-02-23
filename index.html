@@ -2,34 +2,8 @@
 <html>
 <head>
   <title>Top Twitch Games</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
   <link rel="stylesheet" type="text/css" href="lib/c3/c3.min.css" />
-  <style type="text/css">
-  html {
-    height: 100%;
-  }
-  body {
-    font: 12px sans-serif;
-    height: 100%;
-    margin: 0;
-  }
-  #header {
-    background-color: #f2f2f2;
-    padding: 15px;
-  }
-  #header h1 {
-    color: #6441a5;
-    margin: 0;
-  }
-  #header a {
-    color: #6441a5;
-  }
-  #header a:hover {
-    color: #7550ba;
-  }
-  #chart {
-    height: 100%;
-  }
-  </style>
   <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="lib/d3/d3.min.js"></script>
   <script type="text/javascript" src="lib/c3/c3.min.js"></script>
@@ -40,63 +14,6 @@
     Created by <a href="http://www.github.com/seewes/twitch-top">seewes</a>
   </div>
   <div id="chart"></div>
-
-  <script type="text/javascript">
-  var url = 'http://seewes.com/twitch/api2.php';
-  var chart;
-
-  // Create initial graph
-  $.get(url, function(json) {
-    chart = c3.generate({
-      data: {
-        x: 'date',
-        xFormat: '%Y-%m-%d %H:%M:%S',
-        json: json.top,
-        keys: {
-          x: 'date',
-          value: json.games,
-        }
-      },
-      axis: {
-        x: {
-          type: 'timeseries',
-          tick: {
-            format: '%H:%M:%S',
-          }
-        },
-        y: {
-          label: 'Viewers',
-        }
-      },
-      point: {
-        show: false,
-      },
-      grid: {
-        x: {
-          show: true,
-        },
-        y: {
-          show: true,
-        }
-      }
-    });
-  });
-
-  // Load new graph data every minute
-  setInterval(function() {
-    $.get(url, function(json) {
-      console.log(json.top);
-      chart.load({
-        x: 'date',
-        xFormat: '%Y-%m-%d %H:%M:%S',
-        json: json.top,
-        keys: {
-          x: 'date',
-          value: json.games,
-        }
-      });
-    });
-  }, 60000);
-  </script>
+  <script type="text/javascript" src="twitch-top.js"></script>
 </body>
 </html>
