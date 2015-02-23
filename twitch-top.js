@@ -53,3 +53,7 @@ setInterval(function() {
     });
   });
 }, 60000);
+
+// Set the height of the C3 chart to fit browser window
+var chartHeight = window.innerHeight - document.getElementById('header').offsetHeight;
+document.getElementById('chart').setAttribute("style","height:" + (chartHeight-3) + "px");
