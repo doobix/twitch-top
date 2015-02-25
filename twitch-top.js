@@ -34,6 +34,11 @@ $.get(url, function(json) {
       y: {
         show: true,
       }
+    },
+    tooltip: {
+      format: {
+        value: d3.format(','),
+      }
     }
   });
 });
