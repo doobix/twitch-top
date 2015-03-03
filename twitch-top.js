@@ -39,6 +39,11 @@ $.get(url, function(json) {
       format: {
         value: d3.format(','),
       }
+    },
+    onresize: function() {
+      chart.resize({
+        height: resizeChart()
+      });
     }
   });
 });
@@ -60,5 +65,9 @@ setInterval(function() {
 }, 60000);
 
 // Set the height of the C3 chart to fit browser window
-var chartHeight = window.innerHeight - document.getElementById('header').offsetHeight;
-document.getElementById('chart').setAttribute("style","height:" + (chartHeight-3) + "px");
+function resizeChart() {
+  var chartHeight = window.innerHeight - document.getElementById('header').offsetHeight - 3;
+  document.getElementById('chart').setAttribute("style","height:" + chartHeight + "px");
+  return chartHeight;
+}
+resizeChart();
