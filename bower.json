@@ -5,7 +5,7 @@
   "authors": [
     "seewes <doobix@gmail.com>"
   ],
-  "description": "Top Games Being Watch on Twitch",
+  "description": "Top Streams on Twitch",
   "main": "index.html",
   "license": "MIT",
   "ignore": [

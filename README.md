@@ -1,8 +1,8 @@
-# Top Viewed Games on Twitch (in the Past 24 Hours)
+# Top Streams on Twitch (in the Past 24 Hours)
 
-This is a graph made with C3.js (a D3-based reusable chart library) showing the most popular games based on number of viewers on Twitch.
+This is a graph made with C3.js (a D3-based reusable chart library) showing the most popular streams based on number of viewers on Twitch.
 
-![Screenshot](http://i.imgur.com/6AB0lVN.png)
+![Screenshot](http://i.imgur.com/fVnxMVR.png)
 
 ## Live Demo
 
