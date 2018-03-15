@@ -1,4 +1,4 @@
-# Top Streams on Twitch (in the Past 24 Hours)
+# Top Streams on Twitch (in the Past 4 Hours)
 
 This is a graph made with C3.js (a D3-based reusable chart library) showing the most popular streams based on number of viewers on Twitch.
 

@@ -23,3 +23,8 @@ body {
 #chart {
   height: 100%;
 }
+#loading {
+  text-align: center;
+  background-color: palegreen;
+  padding: 10px;
+}

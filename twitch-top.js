@@ -1,6 +1,8 @@
 var url = 'http://seewes.com/twitch/api2.php';
 var chart;
 
+renderLoading(true);
+
 // Create initial graph
 $.get(url, function(json) {
   chart = c3.generate({
@@ -46,6 +48,7 @@ $.get(url, function(json) {
       });
     }
   });
+  renderLoading(false);
 });
 
 // Load new graph data every minute
@@ -62,7 +65,16 @@ setInterval(function() {
       }
     });
   });
-}, 60000);
+}, 600000);
+
+// Hide or display the loading message
+function renderLoading(isLoading) {
+  if (isLoading) {
+    $('#loading').show();
+  } else {
+    $('#loading').hide();
+  }
+}
 
 // Set the height of the C3 chart to fit browser window
 function resizeChart() {

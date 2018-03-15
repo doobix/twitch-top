@@ -56,7 +56,7 @@ header('Access-Control-Allow-Origin: http://seewes.com');
 header('Access-Control-Allow-Origin: http://www.seewes.com');
 
 // Check if game exists
-$sql = "SELECT a.time, a.viewers, b.name FROM `twitch_topgames` as a JOIN `twitch_games` as b on a.twitch_id = b.twitch_id ORDER by a.time DESC, a.viewers DESC LIMIT 960";
+$sql = "SELECT a.time, a.viewers, b.name FROM `twitch_topgames` as a JOIN `twitch_games` as b on a.twitch_id = b.twitch_id ORDER by a.time DESC, a.viewers DESC LIMIT 160";
 $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 $num_rows = mysqli_num_rows($result);
 $json = "";
