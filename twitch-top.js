@@ -51,7 +51,9 @@ $.get(url, function(json) {
   renderLoading(false);
 });
 
-// Load new graph data every minute
+// Load new graph data every 10 minutes
+const SECOND = 1000;
+const MINUTE = 60 * SECOND;
 setInterval(function() {
   $.get(url, function(json) {
     console.log(json.top);
@@ -65,7 +67,7 @@ setInterval(function() {
       }
     });
   });
-}, 600000);
+}, 10 * MINUTE);
 
 // Hide or display the loading message
 function renderLoading(isLoading) {
