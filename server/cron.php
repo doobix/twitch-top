@@ -7,6 +7,9 @@ require('config.php');
 // define('DB_PASS', '');
 // define('DB_NAME', '');
 
+// Twitch Client ID
+// define('TWITCH_CLIENT_ID', '')
+
 // Create connection
 $link = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -16,7 +19,7 @@ if (!$link) {
 }
 
 // Get Twitch Data
-$twitch = json_decode(get_url_contents("https://api.twitch.tv/kraken/games/top?limit=10"));
+$twitch = json_decode(get_url_contents("https://api.twitch.tv/kraken/games/top?limit=10&client_id=" . TWITCH_CLIENT_ID));
 for ($i = 0; $i < sizeof($twitch->top); $i++) {
   // Sanitize input
   $twitchID = clean($twitch->top[$i]->game->_id, $link);
