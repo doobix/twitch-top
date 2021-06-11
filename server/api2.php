@@ -52,8 +52,8 @@ if (!$link) {
 // Change header to JSON content-type
 header('Content-Type: application/json');
 // Allow specific domains to access
-header('Access-Control-Allow-Origin: http://seewes.com');
-header('Access-Control-Allow-Origin: http://www.seewes.com');
+header('Access-Control-Allow-Origin: https://seewes.com');
+header('Access-Control-Allow-Origin: https://www.seewes.com');
 
 // Check if game exists
 $sql = "SELECT a.time, a.viewers, b.name FROM `twitch_topgames` as a JOIN `twitch_games` as b on a.twitch_id = b.twitch_id ORDER by a.time DESC, a.viewers DESC LIMIT 160";
