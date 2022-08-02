@@ -1,4 +1,4 @@
-var url = 'https://seewes.com/twitch/api2.php';
+var url = '/twitch/api2.php';
 var chart;
 
 renderLoading(true);
